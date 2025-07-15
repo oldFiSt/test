@@ -1,0 +1,51 @@
+#include <QtTest>
+#include "battlewindow.h"
+
+class TestBattleWindow : public QObject
+{
+    Q_OBJECT
+
+private slots:
+    //void testValidVerticalPlacement();
+    void testInvalidDiagonalPlacement();
+    void testInvalidTouchingOtherShip();
+};
+
+// void TestBattleWindow::testValidVerticalPlacement()
+// {
+//     BattleWindow win({}, nullptr);
+//     QList<QPoint> ship = { QPoint(1, 1), QPoint(2, 1), QPoint(3, 1) };
+//     QVERIFY(win.isValidEnemyShipPlacement(ship));
+// }
+
+
+void TestBattleWindow::testInvalidDiagonalPlacement()
+{
+    BattleWindow win({}, nullptr);
+    QList<QPoint> ship = { QPoint(1, 1), QPoint(2, 2), QPoint(3, 3) };
+    QVERIFY(!win.isValidEnemyShipPlacement(ship));
+}
+
+
+void TestBattleWindow::testInvalidTouchingOtherShip()
+{
+    BattleWindow win({}, nullptr);
+
+    QList<QPoint> existingShip = { QPoint(4, 4), QPoint(5, 4) };
+    win.enemyShipsGrouped.append(existingShip);
+    win.enemyShipsGroupedFOREVER.append(existingShip);
+
+    for (const QPoint& pt : existingShip) {
+        win.enemyField[pt.x()][pt.y()] = new QPushButton();
+        win.enemyField[pt.x()][pt.y()]->setProperty("hasShip", true);
+    }
+
+    QList<QPoint> newShip = { QPoint(6, 4), QPoint(7, 4) };
+    QVERIFY(!win.isValidEnemyShipPlacement(newShip));
+}
+
+// Создаёт точку входа для теста, без собственного main()
+QTEST_MAIN(TestBattleWindow)
+
+
+#include "tst_battle_window.moc"

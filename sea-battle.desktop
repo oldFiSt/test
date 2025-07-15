@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Sea Battle
+GenericName=Naval Strategy Game
+Exec=SeaBattle
+Icon=seabattle
+Terminal=false
+Categories=Game;StrategyGame;

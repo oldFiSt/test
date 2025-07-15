@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HostSetupWindow</class>
+ <widget class="QDialog" name="HostSetupWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>250</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Настройка сервера</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QDialog {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #0a2463, stop:1 #3e92cc);
+    border: 3px solid #1e3d6b;
+}
+QLabel {
+    color: #f8f8ff; font-family: &quot;Arial Rounded MT Bold&quot;; font-size: 16px;
+}
+QPushButton {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #1e3d6b, stop:1 #0a2463);
+    border: 2px solid #d4af37; border-radius: 10px; padding: 8px 16px;
+    font-family: &quot;Arial Rounded MT Bold&quot;; font-size: 14px; color: #f8f8ff;
+}
+QPushButton:hover {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #3a5f8c, stop:1 #1e3d6b);
+}
+QLineEdit {
+    border: 2px solid #d4af37; border-radius: 5px; padding: 5px;
+    background-color: #f8f8ff; color: #0a2463;
+}
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Введите порт для сервера</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="lineEditPort">
+     <property name="text">
+      <string>12345</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>Порт (например, 12345)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="btnCreate">
+       <property name="text">
+        <string>Создать</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnBack">
+       <property name="text">
+        <string>Назад</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

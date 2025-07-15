@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConnectWindow</class>
+ <widget class="QDialog" name="ConnectWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>588</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Подключение</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QDialog {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                    stop:0 #0a2463, stop:1 #3e92cc);
+    border: 3px solid #1e3d6b;
+}
+
+QLabel {
+    color: #f8f8ff;
+    font-family: &quot;Arial Rounded MT Bold&quot;;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+QLabel#labelTitle {
+    font-size: 36px;
+    font-weight: bold;
+    color: #f8f8ff;
+    background-color: rgba(30, 61, 107, 0.7);
+    border-radius: 15px;
+    padding: 10px;
+    border: 2px solid #d4af37;
+}
+
+QPushButton {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                    stop:0 #1e3d6b, stop:1 #0a2463);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    padding: 12px 24px;
+    font-family: &quot;Arial Rounded MT Bold&quot;;
+    font-size: 18px;
+    color: #f8f8ff;
+    min-width: 200px;
+    min-height: 50px;
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                    stop:0 #3a5f8c, stop:1 #1e3d6b);
+    border: 2px solid #f8f8ff;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                    stop:0 #0a2463, stop:1 #1e3d6b);
+}
+
+QLabel#labelStatus {
+    font-size: 16px;
+    color: #f8f8ff;
+    qproperty-alignment: 'AlignCenter';
+    margin-top: 10px;
+}
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>821</width>
+     <height>466</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="labelTitle">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>40</y>
+      <width>561</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ПОДКЛЮЧЕНИЕ К СЕРВЕРУ</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>130</y>
+      <width>360</width>
+      <height>315</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>20</number>
+     </property>
+     <item>
+      <widget class="QLineEdit" name="lineEditIP">
+       <property name="placeholderText">
+        <string>Введите IP адрес</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEditPort">
+       <property name="placeholderText">
+        <string>Введите порт</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnConnect">
+       <property name="text">
+        <string>Подключиться</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnBack">
+       <property name="text">
+        <string>Назад</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelStatus">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Ожидание подключения второго игрока...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>8</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>8</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
